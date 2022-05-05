@@ -6,7 +6,7 @@ from obd.commands import __mode1__ as cmdlist
 obd.logger.removeHandler(obd.console_handler)
 
 #create connection to elm interface
-connect=obd.OBD("/dev/pts/3")
+connect=obd.OBD("/dev/pts/2")
 
 #Check for connection
 if(connect):
