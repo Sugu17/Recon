@@ -16,7 +16,6 @@ class Logger(Database):
         #Check for connection
         if(self.connect):
             print("\nConnected to ELM Interface.")
-            #Ensure connection
         else:
             print("\nUnable to connect, Please check your connection:(")
     
@@ -32,16 +31,14 @@ class Logger(Database):
             data["time_stamp"]=int(round(datetime.now(timezone.utc).timestamp()))
             #data["time_stamp"]=Decimal(datetime.now(timezone.utc).timestamp())
             data["value"]=str(response.value)
+
+            #Add collected data to database instance
             database.add_metric(data["metric_name"],data["time_stamp"],data["value"])
-            #collect_metrics(data["metric_name"],data["time_stamp"],data["value"])
-
-
-#def collect_metrics(name,time,value,database=Database().database):
-#    database.add_metric(name,time,value)
 
 
 if __name__=="__main__":
-    recon_event=Logger("/dev/pts/5")
+    recon_event=Logger("/dev/pts/3")
+    #Ensure connection
     while(recon_event.connect.is_connected()):
         recon_event.logger()
         

@@ -2,6 +2,7 @@ from dynamodb_api import DynamoDB
 import logging
 import boto3
 import sys
+
 class Database:
     def __init__(self) -> None:
         #setup database
