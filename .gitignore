@@ -1,0 +1,4 @@
+#Ignore python env files
+*.venv
+
+.venv
