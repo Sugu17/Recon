@@ -1,288 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="apple-touch-icon" sizes="76x76" href="./assets/img/apple-icon.png">
+    <link rel="icon" type="image/png" href="./assets/img/favicon.png">
     <title>
         Recon Dashboard
     </title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <style>
-        .sidebar {
-            position: fixed;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            z-index: 100;
-            padding: 90px 0 0;
-            box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
-            z-index: 99;
-        }
-
-        @media (max-width: 767.98px) {
-            .sidebar {
-                top: 11.5rem;
-                padding: 0;
-            }
-        }
-            
-        .navbar {
-            box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .1);
-        }
-
-        @media (min-width: 767.98px) {
-            .navbar {
-                top: 0;
-                position: sticky;
-                z-index: 999;
-            }
-        }
-
-        .sidebar .nav-link {
-            color: #333;
-        }
-
-        .sidebar .nav-link.active {
-            color: #0d6efd;
-        }
-    </style>
+    <!--     Fonts and icons     -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+    <!-- Nucleo Icons -->
+    <link href="./assets/css/nucleo-icons.css" rel="stylesheet" />
+    <link href="./assets/css/nucleo-svg.css" rel="stylesheet" />
+    <!-- Font Awesome Icons -->
+    <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+    <link href="./assets/css/nucleo-svg.css" rel="stylesheet" />
+    <!-- CSS Files -->
+    <link id="pagestyle" href="./assets/css/material-dashboard.css" rel="stylesheet" />
 </head>
-<body>
 
-    <nav class="navbar navbar-light bg-light p-3">
-        <div class="d-flex col-12 col-md-3 col-lg-2 mb-2 mb-lg-0 flex-wrap flex-md-nowrap justify-content-between">
-            <a class="navbar-brand" href="#">
-                Recon Dashboard
-            </a>
-            <button class="navbar-toggler d-md-none collapsed mb-3" type="button" data-toggle="collapse" data-target="#sidebar" aria-controls="sidebar" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-        </div>
-        <div class="col-12 col-md-4 col-lg-2">
-            <input class="form-control form-control-dark" type="text" placeholder="Search" aria-label="Search">
-        </div>
-        <div class="col-12 col-md-5 col-lg-8 d-flex align-items-center justify-content-md-end mt-3 mt-md-0">
-            <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
-                  Hello, Sugu
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <li><a class="dropdown-item" href="#">Settings</a></li>
-                  <li><a class="dropdown-item" href="#">Messages</a></li>
-                  <li><a class="dropdown-item" href="#">Sign out</a></li>
-                </ul>
+<body class="g-sidenav-show bg-gray-100">
+    <nav class="navbar navbar-main bg-gradient-dark navbar-expand-lg position-sticky mt-4 top-1 px-0 mx-4 shadow-none border-radius-xl z-index-sticky" id="navbarBlur" data-scroll="true">
+        <div class="container-fluid py-1 px-3">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
+              <li class="breadcrumb-item text-sm">
+                <a class="opacity-3 text-dark" href="javascript:;">
+                  <svg width="12px" height="12px" class="mb-1 text-white" viewBox="0 0 45 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <title>shop </title>
+                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                      <g transform="translate(-1716.000000, -439.000000)" fill="#fff" fill-rule="nonzero">
+                        <g transform="translate(1716.000000, 291.000000)">
+                          <g transform="translate(0.000000, 148.000000)">
+                            <path d="M46.7199583,10.7414583 L40.8449583,0.949791667 C40.4909749,0.360605034 39.8540131,0 39.1666667,0 L7.83333333,0 C7.1459869,0 6.50902508,0.360605034 6.15504167,0.949791667 L0.280041667,10.7414583 C0.0969176761,11.0460037 -1.23209662e-05,11.3946378 -1.23209662e-05,11.75 C-0.00758042603,16.0663731 3.48367543,19.5725301 7.80004167,19.5833333 L7.81570833,19.5833333 C9.75003686,19.5882688 11.6168794,18.8726691 13.0522917,17.5760417 C16.0171492,20.2556967 20.5292675,20.2556967 23.494125,17.5760417 C26.4604562,20.2616016 30.9794188,20.2616016 33.94575,17.5760417 C36.2421905,19.6477597 39.5441143,20.1708521 42.3684437,18.9103691 C45.1927731,17.649886 47.0084685,14.8428276 47.0000295,11.75 C47.0000295,11.3946378 46.9030823,11.0460037 46.7199583,10.7414583 Z"></path>
+                            <path d="M39.198,22.4912623 C37.3776246,22.4928106 35.5817531,22.0149171 33.951625,21.0951667 L33.92225,21.1107282 C31.1430221,22.6838032 27.9255001,22.9318916 24.9844167,21.7998837 C24.4750389,21.605469 23.9777983,21.3722567 23.4960833,21.1018359 L23.4745417,21.1129513 C20.6961809,22.6871153 17.4786145,22.9344611 14.5386667,21.7998837 C14.029926,21.6054643 13.533337,21.3722507 13.0522917,21.1018359 C11.4250962,22.0190609 9.63246555,22.4947009 7.81570833,22.4912623 C7.16510551,22.4842162 6.51607673,22.4173045 5.875,22.2911849 L5.875,44.7220845 C5.875,45.9498589 6.7517757,46.9451667 7.83333333,46.9451667 L19.5833333,46.9451667 L19.5833333,33.6066734 L27.4166667,33.6066734 L27.4166667,46.9451667 L39.1666667,46.9451667 C40.2482243,46.9451667 41.125,45.9498589 41.125,44.7220845 L41.125,22.2822926 C40.4887822,22.4116582 39.8442868,22.4815492 39.198,22.4912623 Z"></path>
+                          </g>
+                        </g>
+                      </g>
+                    </g>
+                  </svg>
+                </a>
+              </li>
+              <li class="breadcrumb-item text-sm"><a class="opacity-7 text-white" href="javascript:;">Pages</a></li>
+              <li class="breadcrumb-item text-sm text-white active" aria-current="page">New User</li>
+            </ol>
+            <h6 class="font-weight-bolder text-white mb-0">New User</h6>
+          </nav>
+          <div class="sidenav-toggler sidenav-toggler-inner d-xl-block d-none ">
+            <a href="javascript:;" class="nav-link text-body p-0">
+              <div class="sidenav-toggler-inner text-white">
+                <i class="sidenav-toggler-line bg-white"></i>
+                <i class="sidenav-toggler-line bg-white"></i>
+                <i class="sidenav-toggler-line bg-white"></i>
               </div>
+            </a>
+          </div>
+          <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
+            <div class="ms-md-auto pe-md-3 d-flex align-items-center">
+              <div class="input-group input-group-outline">
+                <label class="form-label">Search here</label>
+                <input type="text" class="form-control text-white" onfocus="focused(this)" onfocusout="defocused(this)">
+              </div>
+            </div>
+            <ul class="navbar-nav  justify-content-end">
+              <li class="nav-item">
+                <a href="javascript:;" class="nav-link text-body p-0 position-relative">
+                  <i class="material-icons me-sm-1 text-white">
+                Account settings
+              </i>
+                </a>
+              </li>
+              <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
+                <a href="javascript:;" class="nav-link text-body p-0" id="iconNavbarSidenav">
+                  <div class="sidenav-toggler-inner">
+                    <i class="sidenav-toggler-line"></i>
+                    <i class="sidenav-toggler-line"></i>
+                    <i class="sidenav-toggler-line"></i>
+                  </div>
+                </a>
+              </li>
+              <li class="nav-item px-3">
+                <a href="javascript:;" class="nav-link text-body p-0">
+                  <i class="material-icons fixed-plugin-button-nav cursor-pointer text-white">
+                Support
+              </i>
+                </a>
+              </li>
+              <li class="nav-item dropdown pe-2">
+                <a href="javascript:;" class="nav-link text-body p-0 position-relative" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="material-icons cursor-pointer text-white">
+                Alerts
+              </i>
+                  <span class="position-absolute top-5 start-100 translate-middle badge rounded-pill bg-danger border border-white small py-1 px-2">
+                    <span class="small">11</span>
+                    <span class="visually-hidden">unread notifications</span>
+                  </span>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end p-2 me-sm-n4" aria-labelledby="dropdownMenuButton">
+                  <li class="mb-2">
+                    <a class="dropdown-item border-radius-md" href="javascript:;">
+                      <div class="d-flex align-items-center py-1">
+                        <div class="my-auto">
+                          <span class="material-icons">
+                            Warning
+                          </span>
+                        </div>
+                        <div class="ms-2">
+                          <h6 class="text-sm font-weight-normal mb-0">
+                            High coolant temperate(90C)
+                          </h6>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="dropdown-item border-radius-md" href="javascript:;">
+                      <div class="d-flex align-items-center py-1">
+                        <div class="my-auto">
+                          <span class="material-icons">
+                            Warning
+                          </span>
+                        </div>
+                        <div class="ms-2">
+                          <h6 class="text-sm font-weight-normal mb-0">
+                            Low tire pressure-Front
+                          </h6>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item border-radius-md" href="javascript:;">
+                      <div class="d-flex align-items-center py-1">
+                        <div class="my-auto">
+                          <span class="material-icons">
+                            
+                          </span>
+                        </div>
+                        <div class="ms-2">
+                          <h6 class="text-sm font-weight-normal mb-0">
+                            Warning level critical
+                          </h6>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
         </div>
       </nav>
+    <!--   Core JS Files   -->
+    <script src="./assets/js/core/popper.min.js"></script>
+    <script src="./assets/js/core/bootstrap.min.js"></script>
 
-      <div class="container-fluid">
-        <div class="row">
-            <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
-                <div class="position-sticky">
-                    <ul class="nav flex-column">
-                        <li class="nav-item">
-                          <a class="nav-link active" aria-current="page" href="#">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
-                            <span class="ml-2">Dashboard</span>
-                          </a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="#">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline></svg>
-                            <span class="ml-2">Orders</span>
-                          </a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="#">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-cart"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
-                            <span class="ml-2">Products</span>
-                          </a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="#">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-                            <span class="ml-2">Customers</span>
-                          </a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="#">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bar-chart-2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
-                            <span class="ml-2">Reports</span>
-                          </a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="#">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-layers"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
-                            <span class="ml-2">Integrations</span>
-                          </a>
-                        </li>
-                      </ul>
-                </div>
-            </nav>
+    <!-- Plugin for the charts, full documentation here: https://www.chartjs.org/ -->
+    <script src="./assets/js/plugins/chartjs.min.js"></script>
+    <script src="./assets/js/plugins/Chart.extension.js"></script>
 
-            <main class="col-md-9 ml-sm-auto col-lg-10 px-md-4 py-4">
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Overview</li>
-                    </ol>
-                </nav>
-                <h1 class="h2">Dashboard</h1>
-                <p>This is the homepage of a simple admin interface which is part of a tutorial written on Themesberg</p>
-                <div class="row my-4">
-                    <div class="col-12 col-md-6 col-lg-3 mb-4 mb-lg-0">
-                        <div class="card">
-                            <h5 class="card-header">Customers</h5>
-                            <div class="card-body">
-                              <h5 class="card-title">345k</h5>
-                              <p class="card-text">Feb 1 - Apr 1, United States</p>
-                              <p class="card-text text-success">18.2% increase since last month</p>
-                            </div>
-                          </div>
-                    </div>
-                    <div class="col-12 col-md-6 mb-4 mb-lg-0 col-lg-3">
-                        <div class="card">
-                            <h5 class="card-header">Revenue</h5>
-                            <div class="card-body">
-                              <h5 class="card-title">$2.4k</h5>
-                              <p class="card-text">Feb 1 - Apr 1, United States</p>
-                              <p class="card-text text-success">4.6% increase since last month</p>
-                            </div>
-                          </div>
-                    </div>
-                    <div class="col-12 col-md-6 mb-4 mb-lg-0 col-lg-3">
-                        <div class="card">
-                            <h5 class="card-header">Purchases</h5>
-                            <div class="card-body">
-                              <h5 class="card-title">43</h5>
-                              <p class="card-text">Feb 1 - Apr 1, United States</p>
-                              <p class="card-text text-danger">2.6% decrease since last month</p>
-                            </div>
-                          </div>
-                    </div>
-                    <div class="col-12 col-md-6 mb-4 mb-lg-0 col-lg-3">
-                        <div class="card">
-                            <h5 class="card-header">Traffic</h5>
-                            <div class="card-body">
-                              <h5 class="card-title">64k</h5>
-                              <p class="card-text">Feb 1 - Apr 1, United States</p>
-                              <p class="card-text text-success">2.5% increase since last month</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-12 col-xl-8 mb-4 mb-lg-0">
-                        <div class="card">
-                            <h5 class="card-header">Latest transactions</h5>
-                            <div class="card-body">
-                                <div class="table-responsive">
-                                    <table class="table">
-                                        <thead>
-                                          <tr>
-                                            <th scope="col">Order</th>
-                                            <th scope="col">Product</th>
-                                            <th scope="col">Customer</th>
-                                            <th scope="col">Total</th>
-                                            <th scope="col">Date</th>
-                                            <th scope="col"></th>
-                                          </tr>
-                                        </thead>
-                                        <tbody>
-                                          <tr>
-                                            <th scope="row">17371705</th>
-                                            <td>Volt Premium Bootstrap 5 Dashboard</td>
-                                            <td>johndoe@gmail.com</td>
-                                            <td>€61.11</td>
-                                            <td>Aug 31 2020</td>
-                                            <td><a href="#" class="btn btn-sm btn-primary">View</a></td>
-                                          </tr>
-                                          <tr>
-                                            <th scope="row">17370540</th>
-                                            <td>Pixel Pro Premium Bootstrap UI Kit</td>
-                                            <td>jacob.monroe@company.com</td>
-                                            <td>$153.11</td>
-                                            <td>Aug 28 2020</td>
-                                            <td><a href="#" class="btn btn-sm btn-primary">View</a></td>
-                                          </tr>
-                                          <tr>
-                                            <th scope="row">17371705</th>
-                                            <td>Volt Premium Bootstrap 5 Dashboard</td>
-                                            <td>johndoe@gmail.com</td>
-                                            <td>€61.11</td>
-                                            <td>Aug 31 2020</td>
-                                            <td><a href="#" class="btn btn-sm btn-primary">View</a></td>
-                                          </tr>
-                                          <tr>
-                                            <th scope="row">17370540</th>
-                                            <td>Pixel Pro Premium Bootstrap UI Kit</td>
-                                            <td>jacob.monroe@company.com</td>
-                                            <td>$153.11</td>
-                                            <td>Aug 28 2020</td>
-                                            <td><a href="#" class="btn btn-sm btn-primary">View</a></td>
-                                          </tr>
-                                          <tr>
-                                            <th scope="row">17371705</th>
-                                            <td>Volt Premium Bootstrap 5 Dashboard</td>
-                                            <td>johndoe@gmail.com</td>
-                                            <td>€61.11</td>
-                                            <td>Aug 31 2020</td>
-                                            <td><a href="#" class="btn btn-sm btn-primary">View</a></td>
-                                          </tr>
-                                          <tr>
-                                            <th scope="row">17370540</th>
-                                            <td>Pixel Pro Premium Bootstrap UI Kit</td>
-                                            <td>jacob.monroe@company.com</td>
-                                            <td>$153.11</td>
-                                            <td>Aug 28 2020</td>
-                                            <td><a href="#" class="btn btn-sm btn-primary">View</a></td>
-                                          </tr>
-                                        </tbody>
-                                      </table>
-                                </div>
-                                <a href="#" class="btn btn-block btn-light">View all</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-xl-4">
-                        <div class="card">
-                            <h5 class="card-header">Traffic last 6 months</h5>
-                            <div class="card-body">
-                                <div id="traffic-chart"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <footer class="pt-5 d-flex justify-content-between">
-                    <span>Copyright © 2021-2022 <a href="https://Recon.com">Recon</a></span>
-                    <ul class="nav m-0">
-                        <li class="nav-item">
-                          <a class="nav-link text-secondary" aria-current="page" href="#">Privacy Policy</a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link text-secondary" href="#">Terms and conditions</a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link text-secondary" href="#">Contact</a>
-                        </li>
-                      </ul>
-                </footer>
-            </main>
-        </div>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
-    <script>
-        new Chartist.Line('#traffic-chart', {
-            labels: ['January', 'Februrary', 'March', 'April', 'May', 'June'],
-            series: [
-                [23000, 25000, 19000, 34000, 56000, 64000]
-            ]
-            }, {
-            low: 0,
-            showArea: true
-        });
-    </script>
+    <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
+    <script src="./assets/js/material-dashboard.min.js"></script>
 </body>
+
 </html>
